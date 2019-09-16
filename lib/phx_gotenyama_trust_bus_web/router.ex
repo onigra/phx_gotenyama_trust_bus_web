@@ -7,5 +7,7 @@ defmodule GotenyamaTrustBusWeb.Router do
 
   scope "/api", GotenyamaTrustBusWeb do
     pipe_through :api
+
+    get "/ping", HealthCheckController, :index
   end
 end
