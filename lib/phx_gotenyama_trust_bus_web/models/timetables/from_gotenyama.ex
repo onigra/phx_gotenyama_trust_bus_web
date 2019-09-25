@@ -1,7 +1,7 @@
 defmodule Timetables do
   defmodule FromGotenyama do
     def weekday do
-      {
+      %{
         7  => {33, 48},
         8  => {3, 11, 18, 23, 28, 33, 38, 43, 48, 53, 58},
         9  => {3, 9, 15, 21, 27, 33, 40, 47, 55},
@@ -22,7 +22,7 @@ defmodule Timetables do
     end
 
     def holiday do
-      {
+      %{
         8  => {20, 40},
         9  => {0, 20, 40},
         10 => {0, 20, 40},
