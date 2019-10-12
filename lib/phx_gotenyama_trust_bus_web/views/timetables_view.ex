@@ -1,13 +1,10 @@
 defmodule GotenyamaTrustBusWeb.TimetablesView do
   use GotenyamaTrustBusWeb, :view
 
-  def render("index.json", %{shinagawa: shinagawa, gotenyama: gotenyama}) do
+  def render("index.json", %{timetables: timetables}) do
     %{
       data: %{
-        timetables: %{
-          shinagawa: shinagawa,
-          gotenyama: gotenyama
-        }
+        timetables: timetables
       }
     }
   end
