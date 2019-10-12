@@ -1,33 +1,29 @@
 defmodule GotenyamaTrustBusWeb.TimeTablesControllerTest do
   use GotenyamaTrustBusWeb.ConnCase, async: true
 
+  def key_to_string(timetable) do
+    Enum.reduce(
+      timetable,
+      %{},
+      fn {key, val}, total ->
+        Map.merge(total, %{Integer.to_string(key) => val})
+      end
+    )
+  end
+
   test "index/2", %{conn: conn} do
     # setup
-    shinagawa_timetables =
-      Enum.reduce(
-        Timetable.Shinagawa.weekday(),
-        %{},
-        fn {key, val}, total ->
-          Map.merge(total, %{Integer.to_string(key) => val})
-        end
-      )
-
-    # and
-    gotenyama_timetables =
-      Enum.reduce(
-        Timetable.Gotenyama.weekday(),
-        %{},
-        fn {key, val}, total ->
-          Map.merge(total, %{Integer.to_string(key) => val})
-        end
-      )
-
-    # and
     expected = %{
       "data" => %{
         "timetables" => %{
-          "shinagawa" => shinagawa_timetables,
-          "gotenyama" => gotenyama_timetables
+          "shinagawa" => %{
+            "weekday" => key_to_string(Timetable.Shinagawa.weekday()),
+            "holiday" => key_to_string(Timetable.Shinagawa.holiday())
+          },
+          "gotenyama" => %{
+            "weekday" => key_to_string(Timetable.Gotenyama.weekday()),
+            "holiday" => key_to_string(Timetable.Gotenyama.holiday())
+          }
         }
       }
     }
