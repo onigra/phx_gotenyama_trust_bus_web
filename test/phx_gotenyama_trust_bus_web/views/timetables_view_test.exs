@@ -5,24 +5,26 @@ defmodule GotenyamaTrustBusWeb.TimetablesViewTest do
 
   test "renders index.json" do
     # setup
-    shinagawa_timetables = Timetables.FromShinagawa.weekday
-    gotenyama_timetables = Timetables.FromGotenyama.weekday
+    shinagawa_timetables = Timetables.FromShinagawa.weekday()
+    gotenyama_timetables = Timetables.FromGotenyama.weekday()
 
     # and
     expected = %{
       data: %{
         timetables: %{
           shinagawa: shinagawa_timetables,
-          gotenyama: gotenyama_timetables,
+          gotenyama: gotenyama_timetables
         }
       }
     }
 
     # when
-    actual = render(
-      GotenyamaTrustBusWeb.TimetablesView, "index.json",
-      %{shinagawa: shinagawa_timetables, gotenyama: gotenyama_timetables}
-    )
+    actual =
+      render(
+        GotenyamaTrustBusWeb.TimetablesView,
+        "index.json",
+        %{shinagawa: shinagawa_timetables, gotenyama: gotenyama_timetables}
+      )
 
     # then
     assert expected == actual

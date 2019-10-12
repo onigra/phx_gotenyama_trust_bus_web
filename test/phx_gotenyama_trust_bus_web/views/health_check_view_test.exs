@@ -4,7 +4,7 @@ defmodule GotenyamaTrustBusWeb.HealthCheckViewTest do
   import Phoenix.View
 
   test "renders index.json" do
-    assert render(GotenyamaTrustBusWeb.HealthCheckView, "index.json", %{message: "pong"})
-      == %{data: %{ping: "pong"}}
+    assert render(GotenyamaTrustBusWeb.HealthCheckView, "index.json", %{message: "pong"}) ==
+             %{data: %{ping: "pong"}}
   end
 end
