@@ -1,4 +1,5 @@
-defmodule Timetables.FromGotenyama do
+defmodule Timetable.Gotenyama do
+  @spec weekday :: map()
   def weekday do
     %{
       7 => [33, 48],
@@ -20,6 +21,7 @@ defmodule Timetables.FromGotenyama do
     }
   end
 
+  @spec holiday :: map()
   def holiday do
     %{
       8 => [20, 40],

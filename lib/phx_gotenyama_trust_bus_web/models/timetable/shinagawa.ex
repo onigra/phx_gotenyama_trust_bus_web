@@ -1,4 +1,5 @@
-defmodule Timetables.FromShinagawa do
+defmodule Timetable.Shinagawa do
+  @spec weekday :: map()
   def weekday do
     %{
       7 => [30, 45],
@@ -19,6 +20,7 @@ defmodule Timetables.FromShinagawa do
     }
   end
 
+  @spec holiday :: map()
   def holiday do
     %{
       8 => [35, 55],

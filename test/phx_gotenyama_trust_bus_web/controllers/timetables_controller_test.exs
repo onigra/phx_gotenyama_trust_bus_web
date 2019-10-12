@@ -5,7 +5,7 @@ defmodule GotenyamaTrustBusWeb.TimeTablesControllerTest do
     # setup
     shinagawa_timetables =
       Enum.reduce(
-        Timetables.FromShinagawa.weekday(),
+        Timetable.Shinagawa.weekday(),
         %{},
         fn {key, val}, total ->
           Map.merge(total, %{Integer.to_string(key) => val})
@@ -15,7 +15,7 @@ defmodule GotenyamaTrustBusWeb.TimeTablesControllerTest do
     # and
     gotenyama_timetables =
       Enum.reduce(
-        Timetables.FromGotenyama.weekday(),
+        Timetable.Gotenyama.weekday(),
         %{},
         fn {key, val}, total ->
           Map.merge(total, %{Integer.to_string(key) => val})

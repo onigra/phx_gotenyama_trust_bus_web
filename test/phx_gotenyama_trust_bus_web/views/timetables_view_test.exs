@@ -5,8 +5,8 @@ defmodule GotenyamaTrustBusWeb.TimetablesViewTest do
 
   test "renders index.json" do
     # setup
-    shinagawa_timetables = Timetables.FromShinagawa.weekday()
-    gotenyama_timetables = Timetables.FromGotenyama.weekday()
+    shinagawa_timetables = Timetable.Shinagawa.weekday()
+    gotenyama_timetables = Timetable.Gotenyama.weekday()
 
     # and
     expected = %{

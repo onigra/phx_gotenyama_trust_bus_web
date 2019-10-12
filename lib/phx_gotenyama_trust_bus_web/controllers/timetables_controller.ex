@@ -2,8 +2,8 @@ defmodule GotenyamaTrustBusWeb.TimetablesController do
   use GotenyamaTrustBusWeb, :controller
 
   def index(conn, _params) do
-    shinagawa = Timetables.FromShinagawa.weekday()
-    gotenyama = Timetables.FromGotenyama.weekday()
+    shinagawa = Timetable.Shinagawa.weekday()
+    gotenyama = Timetable.Gotenyama.weekday()
 
     render(conn, "index.json", %{shinagawa: shinagawa, gotenyama: gotenyama})
   end
