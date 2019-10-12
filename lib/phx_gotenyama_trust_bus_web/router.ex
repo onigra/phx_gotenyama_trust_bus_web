@@ -9,5 +9,8 @@ defmodule GotenyamaTrustBusWeb.Router do
     pipe_through :api
 
     get "/ping", HealthCheckController, :index
+
+    # 時刻表
+    get "/timetables", TimetablesController, :index
   end
 end

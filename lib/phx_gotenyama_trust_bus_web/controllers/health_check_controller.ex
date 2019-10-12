@@ -1,4 +1,4 @@
-defmodule GotenyamaTrustBusWeb.HealthCheckController  do
+defmodule GotenyamaTrustBusWeb.HealthCheckController do
   use GotenyamaTrustBusWeb, :controller
 
   def index(conn, _params) do
