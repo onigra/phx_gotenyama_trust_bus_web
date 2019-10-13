@@ -104,4 +104,71 @@ defmodule GotenyamaTrustBusWeb.TimeTablesControllerTest do
     # then
     assert expected == actual
   end
+
+  test "gotenyama/2", %{conn: conn} do
+    # setup
+    expected = %{
+      "data" => %{
+        "timetables" => %{
+          "gotenyama" => %{
+            "weekday" => key_to_string(Timetable.Gotenyama.weekday()),
+            "holiday" => key_to_string(Timetable.Gotenyama.holiday())
+          }
+        }
+      }
+    }
+
+    # when
+    actual =
+      conn
+      |> get(Routes.timetables_path(conn, :gotenyama))
+      |> json_response(200)
+
+    # then
+    assert expected == actual
+  end
+
+  test "gotenyama_weekday/2", %{conn: conn} do
+    # setup
+    expected = %{
+      "data" => %{
+        "timetables" => %{
+          "gotenyama" => %{
+            "weekday" => key_to_string(Timetable.Gotenyama.weekday())
+          }
+        }
+      }
+    }
+
+    # when
+    actual =
+      conn
+      |> get(Routes.timetables_path(conn, :gotenyama_weekday))
+      |> json_response(200)
+
+    # then
+    assert expected == actual
+  end
+
+  test "gotenyama_holiday/2", %{conn: conn} do
+    # setup
+    expected = %{
+      "data" => %{
+        "timetables" => %{
+          "gotenyama" => %{
+            "holiday" => key_to_string(Timetable.Gotenyama.holiday())
+          }
+        }
+      }
+    }
+
+    # when
+    actual =
+      conn
+      |> get(Routes.timetables_path(conn, :gotenyama_holiday))
+      |> json_response(200)
+
+    # then
+    assert expected == actual
+  end
 end
