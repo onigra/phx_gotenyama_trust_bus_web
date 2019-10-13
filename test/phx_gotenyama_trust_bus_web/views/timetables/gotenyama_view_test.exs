@@ -1,4 +1,4 @@
-defmodule GotenyamaTrustBusWeb.TimetablesViewTest do
+defmodule GotenyamaTrustBusWeb.Timetables.GotenyamaViewTest do
   use GotenyamaTrustBusWeb.ConnCase, async: true
 
   import Phoenix.View
@@ -7,16 +7,18 @@ defmodule GotenyamaTrustBusWeb.TimetablesViewTest do
     # setup
     expected = %{
       data: %{
-        timetables: Timetables.all()
+        timetables: %{
+          gotenyama: Timetables.gotenyama()
+        }
       }
     }
 
     # when
     actual =
       render(
-        GotenyamaTrustBusWeb.TimetablesView,
+        GotenyamaTrustBusWeb.Timetables.GotenyamaView,
         "index.json",
-        %{timetables: Timetables.all()}
+        %{timetables: Timetables.gotenyama()}
       )
 
     # then
