@@ -1,6 +1,6 @@
 # GotenyamaTrustBus
 
-![](https://github.com/onigra/phx_gotenyama_trust_bus/workflows/test/badge.svg)
+![](https://github.com/onigra/phx_gotenyama_trust_bus_web/workflows/test/badge.svg)
 
 To start your Phoenix server:
 
