@@ -8,7 +8,7 @@ defmodule GotenyamaTrustBusWeb.Timetables.GotenyamaViewTest do
     expected = %{
       data: %{
         timetables: %{
-          gotenyama: Timetables.gotenyama()
+          gotenyama: Timetable.Gotenyama.all()
         }
       }
     }
@@ -18,7 +18,51 @@ defmodule GotenyamaTrustBusWeb.Timetables.GotenyamaViewTest do
       render(
         GotenyamaTrustBusWeb.Timetables.GotenyamaView,
         "index.json",
-        %{timetables: Timetables.gotenyama()}
+        %{timetables: Timetable.Gotenyama.all()}
+      )
+
+    # then
+    assert expected == actual
+  end
+
+  test "renders weekday.json" do
+    # setup
+    expected = %{
+      data: %{
+        timetables: %{
+          gotenyama: Timetable.Gotenyama.weekday()
+        }
+      }
+    }
+
+    # when
+    actual =
+      render(
+        GotenyamaTrustBusWeb.Timetables.GotenyamaView,
+        "index.json",
+        %{timetables: Timetable.Gotenyama.weekday()}
+      )
+
+    # then
+    assert expected == actual
+  end
+
+  test "renders holiday.json" do
+    # setup
+    expected = %{
+      data: %{
+        timetables: %{
+          gotenyama: Timetable.Gotenyama.holiday()
+        }
+      }
+    }
+
+    # when
+    actual =
+      render(
+        GotenyamaTrustBusWeb.Timetables.GotenyamaView,
+        "index.json",
+        %{timetables: Timetable.Gotenyama.holiday()}
       )
 
     # then

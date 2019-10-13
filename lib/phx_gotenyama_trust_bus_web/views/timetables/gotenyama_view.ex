@@ -10,4 +10,28 @@ defmodule GotenyamaTrustBusWeb.Timetables.GotenyamaView do
       }
     }
   end
+
+  def render("weekday.json", %{timetables: timetables}) do
+    %{
+      data: %{
+        timetables: %{
+          gotenyama: %{
+            weekday: timetables
+          }
+        }
+      }
+    }
+  end
+
+  def render("holiday.json", %{timetables: timetables}) do
+    %{
+      data: %{
+        timetables: %{
+          gotenyama: %{
+            holiday: timetables
+          }
+        }
+      }
+    }
+  end
 end

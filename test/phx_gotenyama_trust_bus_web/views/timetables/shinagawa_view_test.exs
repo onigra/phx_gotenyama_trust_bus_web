@@ -8,7 +8,7 @@ defmodule GotenyamaTrustBusWeb.Timetables.ShinagawaViewTest do
     expected = %{
       data: %{
         timetables: %{
-          shinagawa: Timetables.shinagawa()
+          shinagawa: Timetable.Shinagawa.all()
         }
       }
     }
@@ -18,7 +18,51 @@ defmodule GotenyamaTrustBusWeb.Timetables.ShinagawaViewTest do
       render(
         GotenyamaTrustBusWeb.Timetables.ShinagawaView,
         "index.json",
-        %{timetables: Timetables.shinagawa()}
+        %{timetables: Timetable.Shinagawa.all()}
+      )
+
+    # then
+    assert expected == actual
+  end
+
+  test "renders weekday.json" do
+    # setup
+    expected = %{
+      data: %{
+        timetables: %{
+          shinagawa: Timetable.Shinagawa.weekday()
+        }
+      }
+    }
+
+    # when
+    actual =
+      render(
+        GotenyamaTrustBusWeb.Timetables.ShinagawaView,
+        "index.json",
+        %{timetables: Timetable.Shinagawa.weekday()}
+      )
+
+    # then
+    assert expected == actual
+  end
+
+  test "renders holiday.json" do
+    # setup
+    expected = %{
+      data: %{
+        timetables: %{
+          shinagawa: Timetable.Shinagawa.holiday()
+        }
+      }
+    }
+
+    # when
+    actual =
+      render(
+        GotenyamaTrustBusWeb.Timetables.ShinagawaView,
+        "index.json",
+        %{timetables: Timetable.Shinagawa.holiday()}
       )
 
     # then
