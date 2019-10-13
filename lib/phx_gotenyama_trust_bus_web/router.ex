@@ -16,14 +16,14 @@ defmodule GotenyamaTrustBusWeb.Router do
 
       scope "/shinagawa" do
         get "/", TimetablesController, :shinagawa
-        # get "/weekday", TimetablesController, :index
-        # get "/holiday", TimetablesController, :index
+        get "/weekday", TimetablesController, :shinagawa_weekday
+        get "/holiday", TimetablesController, :shinagawa_holiday
       end
 
       scope "/gotenyama" do
         get "/", TimetablesController, :gotenyama
-        # get "/weekday", TimetablesController, :index
-        # get "/holiday", TimetablesController, :index
+        get "/weekday", TimetablesController, :gotenyama_weekday
+        get "/holiday", TimetablesController, :gotenyama_holiday
       end
     end
   end
