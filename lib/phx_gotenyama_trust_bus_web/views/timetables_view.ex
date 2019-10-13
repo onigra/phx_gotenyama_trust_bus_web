@@ -8,4 +8,24 @@ defmodule GotenyamaTrustBusWeb.TimetablesView do
       }
     }
   end
+
+  def render("shinagawa.json", %{timetables: timetables}) do
+    %{
+      data: %{
+        timetables: %{
+          shinagawa: timetables
+        }
+      }
+    }
+  end
+
+  def render("gotenyama.json", %{timetables: timetables}) do
+    %{
+      data: %{
+        timetables: %{
+          gotenyama: timetables
+        }
+      }
+    }
+  end
 end
