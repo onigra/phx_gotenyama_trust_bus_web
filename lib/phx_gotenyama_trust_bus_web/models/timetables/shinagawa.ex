@@ -1,4 +1,4 @@
-defmodule Timetable.Shinagawa do
+defmodule Timetables.Shinagawa do
   @spec all :: map()
   def all do
     %{'weekday' => weekday(), 'holiday' => holiday()}

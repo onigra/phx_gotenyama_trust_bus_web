@@ -1,4 +1,4 @@
-defmodule Timetable.Gotenyama do
+defmodule Timetables.Gotenyama do
   @spec all :: map()
   def all do
     %{'weekday' => weekday(), 'holiday' => holiday()}

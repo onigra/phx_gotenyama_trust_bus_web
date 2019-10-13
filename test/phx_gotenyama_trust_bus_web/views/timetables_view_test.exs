@@ -8,8 +8,8 @@ defmodule GotenyamaTrustBusWeb.TimetablesViewTest do
     expected = %{
       data: %{
         timetables: %{
-          shinagawa: Timetable.Shinagawa.all(),
-          gotenyama: Timetable.Gotenyama.all()
+          shinagawa: Timetables.Shinagawa.all(),
+          gotenyama: Timetables.Gotenyama.all()
         }
       }
     }
@@ -20,8 +20,8 @@ defmodule GotenyamaTrustBusWeb.TimetablesViewTest do
         GotenyamaTrustBusWeb.TimetablesView,
         "index.json",
         %{
-          shinagawa_timetables: Timetable.Shinagawa.all(),
-          gotenyama_timetables: Timetable.Gotenyama.all()
+          shinagawa_timetables: Timetables.Shinagawa.all(),
+          gotenyama_timetables: Timetables.Gotenyama.all()
         }
       )
 

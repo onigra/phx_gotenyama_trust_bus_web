@@ -7,8 +7,8 @@ defmodule GotenyamaTrustBusWeb.TimeTables.ShinagawaControllerTest do
       "data" => %{
         "timetables" => %{
           "shinagawa" => %{
-            "weekday" => TestUtils.key_to_string(Timetable.Shinagawa.weekday()),
-            "holiday" => TestUtils.key_to_string(Timetable.Shinagawa.holiday())
+            "weekday" => TestUtils.key_to_string(Timetables.Shinagawa.weekday()),
+            "holiday" => TestUtils.key_to_string(Timetables.Shinagawa.holiday())
           }
         }
       }
@@ -30,7 +30,7 @@ defmodule GotenyamaTrustBusWeb.TimeTables.ShinagawaControllerTest do
       "data" => %{
         "timetables" => %{
           "shinagawa" => %{
-            "weekday" => TestUtils.key_to_string(Timetable.Shinagawa.weekday())
+            "weekday" => TestUtils.key_to_string(Timetables.Shinagawa.weekday())
           }
         }
       }
@@ -52,7 +52,7 @@ defmodule GotenyamaTrustBusWeb.TimeTables.ShinagawaControllerTest do
       "data" => %{
         "timetables" => %{
           "shinagawa" => %{
-            "holiday" => TestUtils.key_to_string(Timetable.Shinagawa.holiday())
+            "holiday" => TestUtils.key_to_string(Timetables.Shinagawa.holiday())
           }
         }
       }

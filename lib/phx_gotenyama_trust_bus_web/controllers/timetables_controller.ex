@@ -3,8 +3,8 @@ defmodule GotenyamaTrustBusWeb.TimetablesController do
 
   def index(conn, _params) do
     render(conn, "index.json", %{
-      shinagawa_timetables: Timetable.Shinagawa.all(),
-      gotenyama_timetables: Timetable.Gotenyama.all()
+      shinagawa_timetables: Timetables.Shinagawa.all(),
+      gotenyama_timetables: Timetables.Gotenyama.all()
     })
   end
 end

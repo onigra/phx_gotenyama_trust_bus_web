@@ -8,7 +8,7 @@ defmodule GotenyamaTrustBusWeb.Timetables.GotenyamaViewTest do
     expected = %{
       data: %{
         timetables: %{
-          gotenyama: Timetable.Gotenyama.all()
+          gotenyama: Timetables.Gotenyama.all()
         }
       }
     }
@@ -18,7 +18,7 @@ defmodule GotenyamaTrustBusWeb.Timetables.GotenyamaViewTest do
       render(
         GotenyamaTrustBusWeb.Timetables.GotenyamaView,
         "index.json",
-        %{timetables: Timetable.Gotenyama.all()}
+        %{timetables: Timetables.Gotenyama.all()}
       )
 
     # then
@@ -30,7 +30,7 @@ defmodule GotenyamaTrustBusWeb.Timetables.GotenyamaViewTest do
     expected = %{
       data: %{
         timetables: %{
-          gotenyama: Timetable.Gotenyama.weekday()
+          gotenyama: Timetables.Gotenyama.weekday()
         }
       }
     }
@@ -40,7 +40,7 @@ defmodule GotenyamaTrustBusWeb.Timetables.GotenyamaViewTest do
       render(
         GotenyamaTrustBusWeb.Timetables.GotenyamaView,
         "index.json",
-        %{timetables: Timetable.Gotenyama.weekday()}
+        %{timetables: Timetables.Gotenyama.weekday()}
       )
 
     # then
@@ -52,7 +52,7 @@ defmodule GotenyamaTrustBusWeb.Timetables.GotenyamaViewTest do
     expected = %{
       data: %{
         timetables: %{
-          gotenyama: Timetable.Gotenyama.holiday()
+          gotenyama: Timetables.Gotenyama.holiday()
         }
       }
     }
@@ -62,7 +62,7 @@ defmodule GotenyamaTrustBusWeb.Timetables.GotenyamaViewTest do
       render(
         GotenyamaTrustBusWeb.Timetables.GotenyamaView,
         "index.json",
-        %{timetables: Timetable.Gotenyama.holiday()}
+        %{timetables: Timetables.Gotenyama.holiday()}
       )
 
     # then

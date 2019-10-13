@@ -8,7 +8,7 @@ defmodule GotenyamaTrustBusWeb.Timetables.ShinagawaViewTest do
     expected = %{
       data: %{
         timetables: %{
-          shinagawa: Timetable.Shinagawa.all()
+          shinagawa: Timetables.Shinagawa.all()
         }
       }
     }
@@ -18,7 +18,7 @@ defmodule GotenyamaTrustBusWeb.Timetables.ShinagawaViewTest do
       render(
         GotenyamaTrustBusWeb.Timetables.ShinagawaView,
         "index.json",
-        %{timetables: Timetable.Shinagawa.all()}
+        %{timetables: Timetables.Shinagawa.all()}
       )
 
     # then
@@ -30,7 +30,7 @@ defmodule GotenyamaTrustBusWeb.Timetables.ShinagawaViewTest do
     expected = %{
       data: %{
         timetables: %{
-          shinagawa: Timetable.Shinagawa.weekday()
+          shinagawa: Timetables.Shinagawa.weekday()
         }
       }
     }
@@ -40,7 +40,7 @@ defmodule GotenyamaTrustBusWeb.Timetables.ShinagawaViewTest do
       render(
         GotenyamaTrustBusWeb.Timetables.ShinagawaView,
         "index.json",
-        %{timetables: Timetable.Shinagawa.weekday()}
+        %{timetables: Timetables.Shinagawa.weekday()}
       )
 
     # then
@@ -52,7 +52,7 @@ defmodule GotenyamaTrustBusWeb.Timetables.ShinagawaViewTest do
     expected = %{
       data: %{
         timetables: %{
-          shinagawa: Timetable.Shinagawa.holiday()
+          shinagawa: Timetables.Shinagawa.holiday()
         }
       }
     }
@@ -62,7 +62,7 @@ defmodule GotenyamaTrustBusWeb.Timetables.ShinagawaViewTest do
       render(
         GotenyamaTrustBusWeb.Timetables.ShinagawaView,
         "index.json",
-        %{timetables: Timetable.Shinagawa.holiday()}
+        %{timetables: Timetables.Shinagawa.holiday()}
       )
 
     # then
