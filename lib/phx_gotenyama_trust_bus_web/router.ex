@@ -11,6 +11,20 @@ defmodule GotenyamaTrustBusWeb.Router do
     get "/ping", HealthCheckController, :index
 
     # 時刻表
-    get "/timetables", TimetablesController, :index
+    scope "/timetables" do
+      get "/", TimetablesController, :index
+
+      scope "/shinagawa" do
+        get "/", Timetables.ShinagawaController, :index
+        get "/weekday", Timetables.ShinagawaController, :weekday
+        get "/holiday", Timetables.ShinagawaController, :holiday
+      end
+
+      scope "/gotenyama" do
+        get "/", Timetables.GotenyamaController, :index
+        get "/weekday", Timetables.GotenyamaController, :weekday
+        get "/holiday", Timetables.GotenyamaController, :holiday
+      end
+    end
   end
 end
