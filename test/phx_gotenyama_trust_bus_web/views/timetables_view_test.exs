@@ -22,4 +22,48 @@ defmodule GotenyamaTrustBusWeb.TimetablesViewTest do
     # then
     assert expected == actual
   end
+
+  test "renders shinagawa.json" do
+    # setup
+    expected = %{
+      data: %{
+        timetables: %{
+          shinagawa: Timetables.shinagawa()
+        }
+      }
+    }
+
+    # when
+    actual =
+      render(
+        GotenyamaTrustBusWeb.TimetablesView,
+        "shinagawa.json",
+        %{timetables: Timetables.shinagawa()}
+      )
+
+    # then
+    assert expected == actual
+  end
+
+  test "renders gotenyama.json" do
+    # setup
+    expected = %{
+      data: %{
+        timetables: %{
+          gotenyama: Timetables.gotenyama()
+        }
+      }
+    }
+
+    # when
+    actual =
+      render(
+        GotenyamaTrustBusWeb.TimetablesView,
+        "gotenyama.json",
+        %{timetables: Timetables.gotenyama()}
+      )
+
+    # then
+    assert expected == actual
+  end
 end
