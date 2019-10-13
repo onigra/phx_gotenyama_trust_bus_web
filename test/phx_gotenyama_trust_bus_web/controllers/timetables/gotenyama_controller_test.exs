@@ -7,8 +7,8 @@ defmodule GotenyamaTrustBusWeb.TimeTables.GotenyamaControllerTest do
       "data" => %{
         "timetables" => %{
           "gotenyama" => %{
-            "weekday" => TestUtils.key_to_string(Timetables.Gotenyama.weekday()),
-            "holiday" => TestUtils.key_to_string(Timetables.Gotenyama.holiday())
+            "weekday" => Timetables.Gotenyama.weekday() |> TestUtils.key_to_string(),
+            "holiday" => Timetables.Gotenyama.holiday() |> TestUtils.key_to_string()
           }
         }
       }
@@ -30,7 +30,7 @@ defmodule GotenyamaTrustBusWeb.TimeTables.GotenyamaControllerTest do
       "data" => %{
         "timetables" => %{
           "gotenyama" => %{
-            "weekday" => TestUtils.key_to_string(Timetables.Gotenyama.weekday())
+            "weekday" => Timetables.Gotenyama.weekday() |> TestUtils.key_to_string()
           }
         }
       }
@@ -52,7 +52,7 @@ defmodule GotenyamaTrustBusWeb.TimeTables.GotenyamaControllerTest do
       "data" => %{
         "timetables" => %{
           "gotenyama" => %{
-            "holiday" => TestUtils.key_to_string(Timetables.Gotenyama.holiday())
+            "holiday" => Timetables.Gotenyama.holiday() |> TestUtils.key_to_string()
           }
         }
       }
