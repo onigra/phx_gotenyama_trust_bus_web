@@ -1,5 +1,7 @@
 # GotenyamaTrustBus
 
+![](https://github.com/onigra/phx_gotenyama_trust_bus/workflows/test/badge.svg)
+
 To start your Phoenix server:
 
   * Install dependencies with `mix deps.get`
