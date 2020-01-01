@@ -42,4 +42,46 @@ defmodule GotenyamaTrustBusWeb.NextBusTest do
     # then
     assert actual == expected
   end
+
+  test "Bus is over" do
+    # setup
+    timetable = Timetables.Shinagawa.weekday()
+
+    now =
+      DateTime.from_naive!(
+        ~N[2020-01-01 23:30:00],
+        "Asia/Tokyo",
+        Tzdata.TimeZoneDatabase
+      )
+
+    # and
+    expected = "Bus is over."
+
+    # when
+    actual = NextBus.lookup(timetable, now)
+
+    # then
+    assert actual == expected
+  end
+
+  test "Next bus is nothing" do
+    # setup
+    timetable = Timetables.Shinagawa.weekday()
+
+    now =
+      DateTime.from_naive!(
+        ~N[2020-01-01 21:56:00],
+        "Asia/Tokyo",
+        Tzdata.TimeZoneDatabase
+      )
+
+    # and
+    expected = "Bus is over."
+
+    # when
+    actual = NextBus.lookup(timetable, now)
+
+    # then
+    assert actual == expected
+  end
 end
