@@ -13,10 +13,7 @@ defmodule GotenyamaTrustBusWeb.NextController do
         tt.weekday
       end
 
-    current = t[now.hour]
-    list = Enum.filter(current, fn x -> x > now.minute end)
-
-    next_time = "#{now.hour}:#{hd(list)}"
+    next_time = NextBus.lookup(t, now)
     render(conn, "index.json", %{next_time: next_time})
   end
 
