@@ -38,7 +38,8 @@ defmodule GotenyamaTrustBus.MixProject do
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
       {:holiday_jp, "~> 0.3"},
-      {:timex, "~> 3.5"}
+      {:timex, "~> 3.5"},
+      {:ok, "~> 2.3"}
     ]
   end
 end
