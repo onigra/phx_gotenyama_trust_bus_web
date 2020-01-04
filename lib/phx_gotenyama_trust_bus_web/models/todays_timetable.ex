@@ -19,8 +19,8 @@ defmodule TodaysTimetable do
     end
   end
 
-  defp to_date(datetime) do
-    Date.new(datetime.year, datetime.month, datetime.day)
-    |> elem(1)
+  @spec to_date(DateTime.t()) :: Date.t()
+  defp to_date(dt) do
+    with {:ok, date} <- Date.new(dt.year, dt.month, dt.day), do: date
   end
 end
