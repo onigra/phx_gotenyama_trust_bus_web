@@ -10,11 +10,6 @@ defmodule GotenyamaTrustBusWeb.NextController do
     render(conn, "index.json", %{next_time: next_time})
   end
 
-  defp current_datetime(now) do
-    if now == nil do
-      Timex.local()
-    else
-      Timex.parse!(now, "%FT%T%:z", :strftime)
-    end
-  end
+  defp current_datetime(now) when is_nil(now), do: Timex.local()
+  defp current_datetime(now), do: Timex.parse!(now, "%FT%T%:z", :strftime)
 end
