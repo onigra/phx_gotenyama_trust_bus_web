@@ -20,7 +20,7 @@ defmodule TodaysTimetable do
   end
 
   defp to_date(datetime) do
-    today = Date.new(datetime.year, datetime.month, datetime.day)
-    elem(today, 1)
+    Date.new(datetime.year, datetime.month, datetime.day)
+    |> elem(1)
   end
 end
