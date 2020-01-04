@@ -1,4 +1,5 @@
 defmodule NextBus.NextHour do
+  @spec lookup(map(), DateTime.t()) :: {:error, :bus_is_over} | {:ok, String.t()}
   def lookup(timetable, now) do
     case timetable[now.hour + 1] do
       nil ->
