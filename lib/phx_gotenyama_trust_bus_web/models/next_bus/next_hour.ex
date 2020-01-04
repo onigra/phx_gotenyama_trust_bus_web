@@ -2,7 +2,7 @@ defmodule NextBus.NextHour do
   def lookup(timetable, now) do
     case timetable[now.hour + 1] do
       nil ->
-        {:error, "Bus is over."}
+        {:error, :bus_is_over}
 
       tt ->
         Timex.to_datetime(

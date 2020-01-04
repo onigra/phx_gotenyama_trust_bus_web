@@ -2,13 +2,13 @@ defmodule NextBus.CurrentHour do
   def lookup(timetable, now) do
     case timetable[now.hour] do
       nil ->
-        {:error, "Bus is over."}
+        {:error, :bus_is_over}
 
       tt ->
         next_min = next_minute(tt, now.minute)
 
         if is_nil(next_min) do
-          {:error, "Bus is over."}
+          {:error, :bus_is_over}
         else
           Timex.to_datetime(
             {
